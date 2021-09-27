@@ -4,10 +4,16 @@ class Contact {
         this.phone = phone;
     }
 
+    formatPhoneNumber(){
+        this.phone =  this.phone.split('').join('-')
+    }
+
     getHTML() {
         let newContactHTML = document.createElement('div');
         let contactTitle = document.createElement('h3');
         let contactPhone = document.createElement('p');
+        
+        this.formatPhoneNumber();
 
         contactTitle.innerText = this.name;
         contactPhone.innerText = this.phone;
